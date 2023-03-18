@@ -10,7 +10,7 @@ export default function Home() {
     const [movieArr, setMovieArr] = useState([])
 
     const sendReq = async () => {
-        const Url = `https://movies-library-production.up.railway.app/trending`
+        const Url = `${process.env.REACT_APP_serverURL}/trending`
         const response = await fetch(Url)
         const data = await response.json();
         setMovieArr(data)
